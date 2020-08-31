@@ -1,0 +1,13 @@
+<svg width="217" height="166" >
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="168" width="219" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#000" transform="matrix(4.489560031129211,0,0,3.5620836699337133,-417.9474116428725,-554.3578473817556) " xml:space="preserve" text-anchor="start" font-family="'League Gothic', sans-serif" font-size="24" id="svg_1" y="186.645115" x="97.29785" stroke-width="0" fill="#000000">DM</text>
+ </g>
+</svg>
