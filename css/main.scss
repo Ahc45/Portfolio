@@ -1038,6 +1038,9 @@ span.close-gmodal{
   }
 }
 @media (max-width: 768px) { 
+  #form-pad{
+    padding: 0 !important;
+  }
   .modal-img-hero{
     position: relative;
     max-width: 90%;
