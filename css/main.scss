@@ -27,6 +27,7 @@
 html {
   box-sizing: border-box;
   font-size: 100%;
+    scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -40,6 +41,7 @@ a:hover{
   filter: invert(10%);
   text-decoration: none !important;
 }
+
 body{
     margin:0;
     padding:0;
@@ -63,6 +65,241 @@ body{
   .color-purple, .color-easings { color: #C26EFF; }/* purple: */
   .color-pink, .color-helpers { color: #FB89FB; }/* pink: */
   
+
+
+
+/*= input focus effects css
+=========================== */
+.text-white{ color:#fff;}
+.form-group{ position: relative;}
+:focus{outline: none;}
+.effect-1, 
+.effect-2, 
+.effect-3{border: 0; padding: 7px 0; border-bottom: 1px solid #ccc;}
+
+.effect-1 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.effect-1:focus ~ .focus-border{width: 100%; transition: 0.4s;}
+
+.effect-2 ~ .focus-border{position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.effect-2:focus ~ .focus-border{width: 100%; transition: 0.4s; left: 0;}
+
+.effect-3 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; z-index: 99;}
+.effect-3 ~ .focus-border:before, 
+.effect-3 ~ .focus-border:after{content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 100%; background-color: #3399FF; transition: 0.4s;}
+.effect-3 ~ .focus-border:after{left: auto; right: 0;}
+.effect-3:focus ~ .focus-border:before, 
+.effect-3:focus ~ .focus-border:after{width: 50%; transition: 0.4s;}
+
+.effect-4,
+.effect-5,
+.effect-6{border: 0; padding: 5px 0 7px; border: 1px solid transparent; border-bottom-color: #ccc; transition: 0.4s;}
+
+.effect-4:focus,
+.effect-5:focus,
+.effect-6:focus{padding: 5px 14px 7px; transition: 0.4s;}
+
+.effect-4 ~ .focus-border{position: absolute; height: 0; bottom: 0; left: 0; width: 100%; transition: 0.4s; z-index: -1;}
+.effect-4:focus ~ .focus-border{transition: 0.4s; height: 36px; border: 2px solid #3399FF; z-index: 1;}
+
+.effect-5 ~ .focus-border{position: absolute; height: 36px; bottom: 0; left: 0; width: 0; transition: 0.4s;}
+.effect-5:focus ~ .focus-border{width: 100%; transition: 0.4s; border: 2px solid #3399FF;}
+
+.effect-6 ~ .focus-border{position: absolute; height: 36px; bottom: 0; right: 0; width: 0; transition: 0.4s;}
+.effect-6:focus ~ .focus-border{width: 100%; transition: 0.4s; border: 2px solid #3399FF;}
+
+.effect-7,
+.effect-8,
+.effect-9{border: 1px solid #ccc; padding: 7px 14px 9px; transition: 0.4s;}
+
+.effect-7 ~ .focus-border:before,
+.effect-7 ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 50%; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.effect-7 ~ .focus-border:after{top: auto; bottom: 0;}
+.effect-7 ~ .focus-border i:before,
+.effect-7 ~ .focus-border i:after{content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.6s;}
+.effect-7 ~ .focus-border i:after{left: auto; right: 0;}
+.effect-7:focus ~ .focus-border:before,
+.effect-7:focus ~ .focus-border:after{left: 0; width: 100%; transition: 0.4s;}
+.effect-7:focus ~ .focus-border i:before,
+.effect-7:focus ~ .focus-border i:after{top: 0; height: 100%; transition: 0.6s;}
+
+.effect-8 ~ .focus-border:before,
+.effect-8 ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.3s;}
+.effect-8 ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
+.effect-8 ~ .focus-border i:before,
+.effect-8 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.4s;}
+.effect-8 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect-8:focus ~ .focus-border:before,
+.effect-8:focus ~ .focus-border:after{width: 100%; transition: 0.3s;}
+.effect-8:focus ~ .focus-border i:before,
+.effect-8:focus ~ .focus-border i:after{height: 100%; transition: 0.4s;}
+
+.effect-9 ~ .focus-border:before,
+.effect-9 ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.2s; transition-delay: 0.2s;}
+.effect-9 ~ .focus-border:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
+.effect-9 ~ .focus-border i:before,
+.effect-9 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.2s;}
+.effect-9 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
+.effect-9:focus ~ .focus-border:before,
+.effect-9:focus ~ .focus-border:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
+.effect-9:focus ~ .focus-border:after{transition-delay: 0.2s;}
+.effect-9:focus ~ .focus-border i:before,
+.effect-9:focus ~ .focus-border i:after{height: 100%; transition: 0.2s;}
+.effect-9:focus ~ .focus-border i:after{transition-delay: 0.4s;}
+
+.effect-10, 
+.effect-11, 
+.effect-12,
+.effect-13,
+.effect-14,
+.effect-15{border: 0; padding: 7px 15px; border: 1px solid #ccc; position: relative; background: transparent;}
+
+.effect-10 ~ .focus-bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #ededed; opacity: 0; transition: 0.5s; z-index: -1;}
+.effect-10:focus ~ .focus-bg{transition: 0.5s; opacity: 1;}
+
+.effect-11 ~ .focus-bg{position: absolute; left: 0; top: 0; width: 0; height: 100%; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-11:focus ~ .focus-bg{transition: 0.3s; width: 100%;}
+
+.effect-12 ~ .focus-bg{position: absolute; left: 50%; top: 0; width: 0; height: 100%; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-12:focus ~ .focus-bg{transition: 0.3s; width: 100%; left: 0;}
+
+.effect-13 ~ .focus-bg:before,
+.effect-13 ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 100%; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-13:focus ~ .focus-bg:before{transition: 0.3s; width: 50%;}
+.effect-13 ~ .focus-bg:after{left: auto; right: 0;}
+.effect-13:focus ~ .focus-bg:after{transition: 0.3s; width: 50%;}
+
+.effect-14 ~ .focus-bg:before,
+.effect-14 ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-14:focus ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.effect-14 ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect-14:focus ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+
+.effect-15 ~ .focus-bg:before,
+.effect-15 ~ .focus-bg:after{content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-15:focus ~ .focus-bg:before{transition: 0.3s; width: 50%; left: 0; top: 0; height: 100%;}
+.effect-15 ~ .focus-bg:after{left: auto; right: 50%; top: auto; bottom: 50%;}
+.effect-15:focus ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%; bottom: 0; right: 0;}
+
+
+.effect-16, 
+.effect-17, 
+.effect-18{border: 0; padding: 4px 0; border-bottom: 1px solid #ccc; background-color: transparent; color:#fff; width:100%}
+
+.effect-16 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.effect-16:focus ~ .focus-border,
+.has-content.effect-16 ~ .focus-border{width: 100%; transition: 0.4s;}
+.effect-16 ~ label{position: absolute; left: 0; width: 100%; top: 0px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-16:focus ~ label, .has-content.effect-16 ~ label{top: -16px; font-size: 12px; color: #3399FF; transition: 0.3s;}
+
+.effect-17 ~ .focus-border{position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.effect-17:focus ~ .focus-border,
+.has-content.effect-17 ~ .focus-border{width: 100%; transition: 0.4s; left: 0;}
+.effect-17 ~ label{position: absolute; left: 0; width: 100%; top: 9px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-17:focus ~ label, .has-content.effect-17 ~ label{top: -16px; font-size: 12px; color: #3399FF; transition: 0.3s;}
+
+.effect-18 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; z-index: 99;}
+.effect-18 ~ .focus-border:before, 
+.effect-18 ~ .focus-border:after{content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 100%; background-color: #3399FF; transition: 0.4s;}
+.effect-18 ~ .focus-border:after{left: auto; right: 0;}
+.effect-18:focus ~ .focus-border:before, 
+.effect-18:focus ~ .focus-border:after,
+.has-content.effect-18 ~ .focus-border:before,
+.has-content.effect-18 ~ .focus-border:after{width: 50%; transition: 0.4s;}
+.effect-18 ~ label{position: absolute; left: 0; width: 100%; top: 9px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-18:focus ~ label, .has-content.effect-18 ~ label{top: -16px; font-size: 12px; color: #3399FF; transition: 0.3s;}
+
+.effect-19,
+.effect-20,
+.effect-21{border: 1px solid #ccc; padding: 7px 14px; transition: 0.4s; background: transparent;}
+
+.effect-19 ~ .focus-border:before,
+.effect-19 ~ .focus-border:after{content: ""; position: absolute; top: -1px; left: 50%; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.effect-19 ~ .focus-border:after{top: auto; bottom: 0;}
+.effect-19 ~ .focus-border i:before,
+.effect-19 ~ .focus-border i:after{content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.6s;}
+.effect-19 ~ .focus-border i:after{left: auto; right: 0;}
+.effect-19:focus ~ .focus-border:before,
+.effect-19:focus ~ .focus-border:after,
+.has-content.effect-19 ~ .focus-border:before,
+.has-content.effect-19 ~ .focus-border:after{left: 0; width: 100%; transition: 0.4s;}
+.effect-19:focus ~ .focus-border i:before,
+.effect-19:focus ~ .focus-border i:after,
+.has-content.effect-19 ~ .focus-border i:before,
+.has-content.effect-19 ~ .focus-border i:after{top: -1px; height: 100%; transition: 0.6s;}
+.effect-19 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-19:focus ~ label, .has-content.effect-19 ~ label{top: -18px; left: 0; font-size: 12px; color: #3399FF; transition: 0.3s;}
+
+.effect-20 ~ .focus-border:before,
+.effect-20 ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.3s;}
+.effect-20 ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
+.effect-20 ~ .focus-border i:before,
+.effect-20 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.4s;}
+.effect-20 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect-20:focus ~ .focus-border:before,
+.effect-20:focus ~ .focus-border:after,
+.has-content.effect-20 ~ .focus-border:before,
+.has-content.effect-20 ~ .focus-border:after{width: 100%; transition: 0.3s;}
+.effect-20:focus ~ .focus-border i:before,
+.effect-20:focus ~ .focus-border i:after,
+.has-content.effect-20 ~ .focus-border i:before,
+.has-content.effect-20 ~ .focus-border i:after{height: 100%; transition: 0.4s;}
+.effect-20 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-20:focus ~ label, .has-content.effect-20 ~ label{top: -18px; left: 0; font-size: 12px; color: #3399FF; transition: 0.3s;}
+
+.effect-21 ~ .focus-border:before,
+.effect-21 ~ .focus-border:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.2s; transition-delay: 0.2s;}
+.effect-21 ~ .focus-border:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
+.effect-21 ~ .focus-border i:before,
+.effect-21 ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.2s;}
+.effect-21 ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
+.effect-21:focus ~ .focus-border:before,
+.effect-21:focus ~ .focus-border:after,
+.has-content.effect-21 ~ .focus-border:before,
+.has-content.effect-21 ~ .focus-border:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
+.effect-21:focus ~ .focus-border:after,
+.has-content.effect-21 ~ .focus-border:after{transition-delay: 0.2s;}
+.effect-21:focus ~ .focus-border i:before,
+.effect-21:focus ~ .focus-border i:after,
+.has-content.effect-21 ~ .focus-border i:before,
+.has-content.effect-21 ~ .focus-border i:after{height: 100%; transition: 0.2s;}
+.effect-21:focus ~ .focus-border i:after,
+.has-conten.effect-21 ~ .focus-border i:after{transition-delay: 0.4s;}
+.effect-21 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-21:focus ~ label, .has-content.effect-21 ~ label{top: -18px; left: 0; font-size: 12px; color: #3399FF; transition: 0.3s;}
+
+.effect-22, 
+.effect-23, 
+.effect-24{border: 0; padding: 7px 15px; border: 1px solid #ccc; position: relative; background: transparent;}
+
+.effect-22 ~ .focus-bg{position: absolute; left: 0; top: 0; width: 0; height: 100%; background-color: transparent; transition: 0.4s; z-index: -1;}
+.effect-22:focus ~ .focus-bg, 
+.has-content.effect-22 ~ .focus-bg{transition: 0.4s; width: 100%; background-color: #ededed;}
+.effect-22 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-22:focus ~ label, .has-content.effect-22 ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+
+.effect-23 ~ .focus-bg:before,
+.effect-23 ~ .focus-bg:after{content: ""; position: absolute; left: 0; top: 0; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-23:focus ~ .focus-bg:before,
+.has-content.effect-23 ~ .focus-bg:before{transition: 0.3s; width: 50%; height: 100%;}
+.effect-23 ~ .focus-bg:after{left: auto; right: 0; top: auto; bottom: 0;}
+.effect-23:focus ~ .focus-bg:after,
+.has-content.effect-23 ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%;}
+.effect-23 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-23:focus ~ label, .has-content.effect-23 ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+
+.effect-24 ~ .focus-bg:before,
+.effect-24 ~ .focus-bg:after{content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0; background-color: #ededed; transition: 0.3s; z-index: -1;}
+.effect-24:focus ~ .focus-bg:before,
+.has-content.effect-24 ~ .focus-bg:before{transition: 0.3s; width: 50%; left: 0; top: 0; height: 100%;}
+.effect-24 ~ .focus-bg:after{left: auto; right: 50%; top: auto; bottom: 50%;}
+.effect-24:focus ~ .focus-bg:after,
+.has-content.effect-24 ~ .focus-bg:after{transition: 0.3s; width: 50%; height: 100%; bottom: 0; right: 0;}
+.effect-24 ~ label{position: absolute; left: 14px; width: 100%; top: 10px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-24:focus ~ label, .has-content.effect-24 ~ label{top: -18px; left: 0; font-size: 12px; color: #333; transition: 0.3s;}
+/*= input focus effects css End
+=============================== */
+
+
   h1,h2,h3,h4,h5,h6,p{
     font-family: 'Epilogue', sans-serif;
   }
@@ -92,6 +329,11 @@ body{
   letter-spacing: 2px;
   padding: 12px 18px !important;
 }
+.top10{ margin-top: 10px}
+.top20{ margin-top: 20px}
+.top30{ margin-top: 30px}
+.top50{ margin-top: 50px}
+.top100{ margin-top: 100px}
 .btn{ border-radius: 0 !important;}
 .pad0{padding:0 !important;}
 .mar0{margin:0;}
@@ -106,7 +348,20 @@ body{
   padding-right: 0;
   padding-left: 0;
 }
+.h-inhiret{ height: inherit;}
+.w-inhiret{ width : inherit;}
+.vh-100{ min-height: 100vh}
+.vh-90{ min-height: 90vh}
+.pl-20{padding-left: 20%;}
+.pr-20{padding-right: 20%;}
 
+.pl-10{padding-left: 10%;}
+.pr-10{padding-right: 10%;}
+.flex{display: flex}
+.pad20{padding:20px}
+.fw-500{font-weight: 500;}
+.fw-600{font-weight: 600;}
+.mw-60{max-width: 80%;}
 body{
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -117,7 +372,12 @@ body{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
-
+.form-group{
+  margin-top: 2rem;
+}
+textarea{
+  min-height: 100px;
+}
 .cover-spaces{
   display: grid;
   grid-template-columns: 1fr;
@@ -146,8 +406,17 @@ body{
   display:flex;
   height: 100%;
 }
+ .center-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .align-center{
   align-items: center;
+}
+
+h3#stacks-lead {
+  padding-right: 5%;
 }
 
 // font styles Utilies
@@ -163,7 +432,10 @@ body{
   font-size: 60px;
   margin-bottom: 20px;
 }
-
+.hero-title-4{
+  font-size:50px;
+  margin-bottom: 10px;
+}
 #navigation-container{
   z-index: 99;
   /* width: 100vw; */
@@ -223,6 +495,8 @@ body{
   z-index: 1001;
   background: $base-color;
   transition:all 1s;
+
+  mix-blend-mode: difference;
   .logo{
     width:120px;
     height: 120px;
@@ -238,6 +512,14 @@ body{
   .nav-hamburger{
     display: none;
   }
+}
+.lead-works{
+  position: absolute;
+    top: 12%;
+    left: 10%;
+    h1{
+      mix-blend-mode: difference;
+    }
 }
 .navi-section.complete{
   width: 160px;
@@ -263,7 +545,6 @@ body{
     &:hover{
       width:100px;
       height: 100px;
-      transform: rotate(360deg);
     }
   }
   .v-line{
@@ -298,7 +579,14 @@ body{
     }
   }
 }
-
+#sc-container{
+  // background: #272727;
+  visibility: hidden;
+  overflow: hidden;
+}
+#sc-container.open{
+  visibility: visible;
+}
 #nav-icon1 {
   position: absolute;
   width: 40px;
@@ -442,13 +730,13 @@ body{
   justify-content: center;
   text-align:center;
   color:#fff;
-  
   ul{
     display:flex;
     list-style-type: none;
     justify-content: space-between;
     font-size: 25px;
     padding-inline-start: 0;
+    margin-top: 5%;
     li{
       position: relative;   
     }
@@ -460,13 +748,16 @@ body{
       border-radius: 50%;
       background-color: #FF0000;
       position: absolute;
-      margin-left: 45%;
+      left:147%;
       top:10%;
     }
   }
 }
 .lead-hero-landing{
   position: relative;
+}
+#lead-text-ul{
+  min-width: 600px;
 }
 .gray-square{
   width: 55%;
@@ -512,20 +803,28 @@ body{
       margin-top:10px;
       font-size: 14px;
       position: relative;
+      cursor: pointer;
+      transition: all .5s;
     }
+    :before{
+        content: '';
+        position: absolute;
+        border: none;
+        left:-40%;
+        top:45%;
+      }
     .active:before{
       content: '';
       width:60%;
       height:2px;
       position: absolute;
-      border: 1px solid red;
-      left:-40%;
-      top:45%;
+      border: 1px solid red;  
     }
   }
 }
-#project-container{
-  z-index: 10;
+#works{
+  background: #fff;
+  // z-index: 10;
 }
 .bg-black-project{
   background:#272727;
@@ -534,7 +833,6 @@ body{
   height: 70%;
   right:0;
   top:14%;
-  z-index:-1;
 }
 #project-image-container{
   max-width: 48%;
@@ -542,10 +840,10 @@ body{
   z-index: 2;
   right: 14%;
   top: 14%;
-  display: flex;
+  // display: flex;
   .portrait{
     max-width: 40%;
-    margin: auto;
+    margin: auto auto auto 20%;
   }
 }
 #project-des{
@@ -595,9 +893,12 @@ body{
   }
 }
 #stack-list{
-  align-self: flex-end;
   font-size: 40px;
-  display: flex;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6,15%);
+  // grid-row-gap: 15%;
+  justify-content: end;
   i{
     padding: 15px;
     margin: 0 20px;
@@ -605,20 +906,16 @@ body{
     border-radius: 50%;
     font-size: 30px;
     color: #FF0000;
+    cursor: pointer;
   }
-  i:nth-child(n+7) {
-    display: none;
+  div{
+    padding: 20% 0;
   }
-  i.active{
-    position: absolute;
-    top:15%;
-    border: none;
-    font-size: 600px;
-    color:#5F5F5F;
-    z-index: -1;
-    left:10%;
-    transform: translateX(-62vh) translateY(-74vh);
-  }
+}
+#stack-show-icon{
+  font-size: 40em;
+  position: absolute;
+  left: 15%;
 }
 #stack-container{
   min-height: 100%;
@@ -627,19 +924,79 @@ body{
   color: #fff;
 }
 #stacks{
-  display: grid;
-  grid-template-rows: 9fr 2fr;
-  z-index: 10;
+  width: 100%;
 }
 
 
 #about{
-  background: #101213;
+  overflow: hidden;
+  z-index:10;
+  color: #fff;
+  min-height: 100vh;
+  line-height: 2rem;
 }
+.about-image {
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  /* bottom: 0; */
+  -webkit-transform: translateX(-110);
+  transform: translateX(67vw) translateY(20vh);
+}
+// #contact{
+//   position: relative;
+// }
+// #home{
+//   position: relative;
+// }
 
-
-
-
+.modal-gsap {
+  position: fixed;
+  background: #272727;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  color: #fff;
+}
+// .modal-gsap-content {
+//   position: relative;
+// }
+.modal-gsap-head {    
+  padding: 30px;
+  min-height: 10vh;
+}
+span.close-gmodal{
+  font-size: 30px;
+  /* border: 1px solid #fff; */
+  float: right;
+  cursor: pointer;
+}
+.modal-img-hero{
+  max-width: 45%;
+  right: 0;
+  top: 11%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  .portrait{    
+    max-width: 40%;
+    /* float: right; */
+    margin-left: 20%;
+  }
+}
+.content-area-modal
+{
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 10%;
+  padding-right: 15%;
+  color: #070506;
+}
 // RESPONSIVE
 @media (max-width: 1250px){ 
   #project-image-container{
@@ -660,7 +1017,8 @@ body{
   }
 
 }
-@media (max-width: 992px) { 
+@media (max-width: 992px) {
+
   #project-nav{
     top:17%;
     padding:10px;
@@ -668,12 +1026,48 @@ body{
       font-size: 9px;
     }
   }
+  .about-image {
+    width: 600px;
+    height: 450px;
+    
+    transform: translateX(54vw) translateY(20vh);
+}
   #project-image-container{
     max-width: 70%;
-    top: 10%;
+    top: 20%;
   }
 }
 @media (max-width: 768px) { 
+  .modal-img-hero{
+    position: relative;
+    max-width: 90%;
+    margin:auto;
+    .portrait{
+      max-width: 60%;
+    }
+  }
+
+  #lead-text-ul{
+    margin-top:30px;
+    min-width: 80vw;
+  }
+  .form-group {
+    margin-top: 1rem;
+  }
+
+  .hero-title-4{
+    font-size: 30px;
+  }
+  #about{
+    padding: 20px;
+    font-size: 12px;
+    line-height: 22px;
+    .about-image {
+      width: 400px;
+      height: 400px;
+      transform: translateX(34vw) translateY(58vh);
+  }
+  }
   #project-image-container{
   top: 30%;
   }
@@ -688,7 +1082,7 @@ body{
   }
   .navi-section.complete{
     width: 100%;
-    height: 20vh;
+    height: 0;
     left:2%;
     .nav-hamburger{
       top:15%;
@@ -698,6 +1092,7 @@ body{
       top: 7%;
       left: 80%;
       transform: scale(.8);
+      filter: invert(1);
     }
     .l-logo{
       display: none;
@@ -729,13 +1124,14 @@ body{
 
   #stack-list{
     margin: 20px 0;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(5, 16%);
     font-size: 35px;
+    grid-gap: 10px;
     i{
-      padding:10px;
-      margin: 0 12px;
-      border-radius: 50%;
-    }  
+
+    padding: 11px;
+     margin: 0;
+    }
   }
 
   #project-des{
@@ -744,11 +1140,11 @@ body{
     max-width: 90%;
   }
   #project-image-container{
-    max-width: 100%;
-    top:30%;
+    min-width: 90%;
+    top: 35%;
     left: 5%;
     .portrait{
-      min-width: 50%;
+      min-width: 30%;
       left:2%;
       top:20%;
     }
@@ -811,4 +1207,3 @@ body{
     left: 75%;
   }
 }
-

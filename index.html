@@ -10,19 +10,22 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/ionicons.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
         <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
         
         <script src="js/jquery.js"></script>
-        <!-- <script src="js/mo.js"></script> -->
-        <script src="js/gsap.min.js"></script>
+        <script src="js/gsap/minified/gsap.min.js"></script>
+        <script src="js/gsap/minified/ScrollTrigger.min.js"></script>
+        <!-- <script src="js/fullpage_2.js"></script> -->
         <script src="js/anime.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
+        
         <div class="navi-section" id="navi-section">
             <img src="img/logo.png" class="logo" alt="DM CANDAR LOGO">
             <div class="nav-hamburger">
@@ -37,14 +40,14 @@
         </div>
         <div class="navigation-container close" id="navigation-container">
             <div class="container-fluid pad0">
-                <div class="row no-gutter">
+                <div class="row no-gutter m-0">
                     <div class="col-12 col-md-7 bg-base pad0" id="nav-side">
                         <div class="nav-container">
                             <ul class="nav-item">
-                                <li><div><span>1</span> ABOUT ME</div></li>
-                                <li class="active"><div><span>2</span> PROJECTS</div></li>
-                                <li><div><span>3</span> STACKS</div></li>
-                                <li><div><span>4</span> CONTACT</div></li>
+                                <li><a href="#about"><div><span>1</span> ABOUT ME</div></a></li>
+                                <li class="active"><a href="#works"><div><span>2</span> WORKS</div></a></li>
+                                <li><a href="#stacks"><div><span>3</span> STACKS</div></a></li>
+                                <li><a href="#contact"><div><span>4</span> CONTACT</div></a></li>
                             </ul>
                             <div class="contact-div">
                                 <p><i class="ion-ios-navigate"></i>  88 Sampaguita St. Villa Esperanza, Molino 2, Bacoor Cavite</p>
@@ -69,134 +72,372 @@
                 </div>
             </div>
         </div>
-         <section class="section">
-            <div class="container-fluid pad0">
-                <div class="home-landing">
-                    <div class="gray-square" id="gray-square"></div>
-                    <div class="lead-hero-landing">
-                        <h1 class="gotham hero-title">  < DEVELOP > </h1>
-                        <div class="mt-3">
-                            <ul class="gotham">
-                                <li>ANALYZE</li>
-                                <li>BUILD </li>
-                                <li>SOLUTION</li>
-                            </ul>
+        <div id="sc-container">
+            <section class="section" id="home">
+                <div class="container-fluid pad0">
+                    <div class="home-landing">
+                        <div class="gray-square" id="gray-square"></div>
+                        <div class="lead-hero-landing">
+                            <div id="text-hero">
+                                <h1 class="gotham hero-title">  < <span class="typewrite" data-period="2000"
+                                     data-type='[ "DAVE MARK", "", "FULL STACK", "DEVELOPER","DESIGNER" ,"DEV OPS"]'><span class="wrap"></span></span> > </h1>
+                            </div>
+                            <div class="mt-3" id="lead-text-ul">
+                                <ul class="gotham">
+                                    <li>ANALYZE</li>
+                                    <li>BUILD </li>
+                                    <li>SOLUTION</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-cover" style="background:url('img/hero-bg.jpg')"></div>
+                </div>
+            </section>
+            <section class="section dark-secondary to-animate" id="about">
+                <div class="about-image">
+                    <img class="img-fluid" src="/me.png">
+                </div>
+                <div class="container ">
+                    <div class="row flex align-center vh-90" >
+                        <div class="col-md-10">
+                            <h1 class="hero-title-3 f-right">ABOUT ME</h1>
+                            
+                            <H3 class="gotham">Hi. I'm Dave Mark Candar, nice to meet you!</H3>
+                            <p>I am an inspiring Web Developer and your one man IT department, some says I'm your Jack of all TECH.</p>
+                            <br>
+                            <p>I am passionate about building excellent software that improves the lives of those around me. I specialize in creating software for clients ranging from individuals and small-businesses all the way to large enterprise corporations. What would you do if you had a software expert available at your fingertips?</p>
+                        </div>    
+                    </div>
+                </div>
+            </section>
+            <section class="section dark-secondary" id="stacks">
+                <div id="stack-show-icon"  class="animate rotate-left">
+                     <i class="devicon-react-original" id="stack-show-icon-i"></i> 
+                </div>
+                <div class="container h-inhiret center-content">
+                    <div class="row w-inhiret">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-9">
+                            <h2 class="float-right text-white relative stacks-desc animate left-dash" id="stacks-lead">STACKS</h2>
+                            <div class="clearfix top10"></div>
+                            <div class="stact-list mb-5" id="stack-list">
+                                <div><i data-iname="React Native" data-icon="devicon-react-original" class="devicon-react-original colored active"></i></div>
+                                <div><i data-iname="Php" data-icon="devicon-php-plain" class="devicon-php-plain colored"></i></div>
+                                <div><i data-iname="Codeigniter" data-icon="devicon-codeigniter-plain-wordmark" class="devicon-codeigniter-plain-wordmark"></i></div>
+                                <div><i data-iname="CSS 3" data-icon="devicon-css3-plain" class="devicon-css3-plain"></i></div>
+                                <div><i data-iname="SASS" data-icon="devicon-sass-original" class="devicon-sass-original"></i></div>
+                                <div><i data-iname="Laravel" data-icon="devicon-laravel-plain" class="devicon-laravel-plain"></i></div>
+                                <div><i data-iname="Wordpress" data-icon="devicon-wordpress-plain" class="devicon-wordpress-plain"></i></div>
+                                <div><i data-iname="Bootsrap" data-icon="devicon-bootstrap-plain" class="devicon-bootstrap-plain"></i></div>
+                                <div><i data-iname="Photoshop" data-icon="devicon-photoshop-plain" class="devicon-photoshop-plain"></i></div>
+                                <div><i data-iname="Mysql" data-icon="devicon-mysql-plain" class="devicon-mysql-plain"></i></div>
+                                <div><i data-iname="Typescript" data-icon="devicon-typescript-plain" class="devicon-typescript-plain"></i></div>
+                                <div><i data-iname="Vuejs" data-icon="devicon-vuejs-plain" class="devicon-vuejs-plain"></i></div>
+                                <div><i data-iname="JavaScript" data-icon="devicon-javascript-plain" class="devicon-javascript-plain"></i></div>
+                                <div><i data-iname="Github" data-icon="devicon-github-plain" class="devicon-github-plain"></i></div>
+                                <div><i data-iname="HTML 5" data-icon="devicon-html5-plain" class="devicon-html5-plain"></i></div>
+                                <div><i data-iname="Webpack" data-icon="devicon-webpack-plain" class="devicon-webpack-plain"></i></div>
+                                <div><i data-iname="Apache" data-icon="devicon-apache-plain"class="devicon-apache-plain"></i></div>
+                                <div><i data-iname="Google Stack (fibase, g-suite, Cloud, Dialogflow)" data-icon="devicon-google-plain" class="devicon-google-plain"></i></div>
+                            </div>
+                            <h4 id="icon-desc"  class="hero-title-4 text-white gotham stacks-desc animate right-dash">React Native</h4>
                         </div>
                     </div>
                 </div>
+            </section>
+            <section class="section " id="works">
+                <div id="project-nav">
+                    <ul>
+                        <li class="active" data-id="health-center">HEATH CENTER</li>
+                        <li data-id="student-id">STUDENT ID CASHCARD</li>
+                        <li data-id="dm-ai"> DM AI</li>
+                        <li data-id="maqlit" >MAQIT</li>
+                        <li data-id="day1" >DAY 1</li>
+                    </ul>
+                </div>
+                <div class="bg-black-project"></div>
+                <div id="health-center" >
+                    <div id="project-image-container">
+                        <img src="/img/projects/healthcenter.png" alt="Dave Mark Health Center Project" class="img-fluid">
+                    </div>
 
-                <div class="bg-cover" style="background:url('img/hero-bg.jpg')"></div>
-            </div>
-        </section>
+                    <div id="project-des" class="">
+                        <a class="btn btn-primary btn-md btn-lg btn-black  modal-trigger" data-target="#heath-center-modal">VIEW MORE</a>
 
-       <!-- <section class="section" id="project-container">
-            <div id="project-nav">
-                <ul>
-                    <li class="active">HEATH CENTER</li>
-                    <li>DM AI</li>
-                    <li>MAQIT</li>
-                    <li >STUDENT ID CASHCARD</li>
-                </ul>
-            </div>
-            <div class="bg-black-project"></div>
-            <div id="project-image-container">
-                <img src="/img/projects/healthcenter.png" alt="Dave Mark Health Center Project" class="img-fluid">
-            </div>
-            <div id="project-des">
-                <a class="btn btn-primary btn-md btn-lg btn-black ">VIEW MORE</a>
-               <h1 class="hero-title-2 f-base ">HEALTH CENTER</h1>
-            </div>
-        </section>
-      
-        <section class="section" id="project-container">
-            <div id="project-nav">
-                <ul>
-                    <li class="active">HEATH CENTER</li>
-                    <li>DM AI</li>
-                    <li>MAQIT</li>
-                    <li >STUDENT ID CASHCARD</li>
-                </ul>
-            </div>
-            <div class="bg-black-project"></div>
-            <div id="project-image-container">
-                <img src="/img/projects/DM AI.png" alt="Dave Mark Health Center Project" class="img-fluid portrait">
-            </div>
-            <div id="project-des">
-                <a class="btn btn-primary btn-md btn-lg btn-black ">VIEW MORE</a>
-               <h1 class="hero-title-2 f-base ">DM AI</h1>
-            </div>
-        </section>
-         <section class="section" id="project-container">
-            <div id="project-nav">
-                <ul>
-                    <li class="active">HEATH CENTER</li>
-                    <li>DM AI</li>
-                    <li>MAQIT</li>
-                    <li >STUDENT ID CASHCARD</li>
-                </ul>
-            </div>
-            <div class="bg-black-project"></div>
-            <div id="project-image-container">
-                <img src="/img/projects/healthcenter.png" alt="Dave Mark Health Center Project" class="img-fluid">
-            </div>
-            <div id="project-des">
-                <a class="btn btn-primary btn-md btn-lg btn-black ">VIEW MORE</a>
-               <h1 class="hero-title-2 f-base ">STUDEND ID CASH CARD</h1>
-            </div>
-        </section>
-        <section class="section dark-secondary" id="stacks">
-            <div class="container pad0 flex" id="stack-container">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8 col-12">
-                        <div class="stack-des ">
-                            <h1 class="hero-title-3">REACT NATIVE</h1>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni recusandae 
-                                sed ex nobis fuga culpa tempore assumenda minus numquam iusto, saepe, 
-                                expedita quidem laborum dignissimos minima aliquid! Illum, possimus iure.
-                                Officia aliquam aliquid consectetur, enim placeat eaque neque ut architecto </p>
+                    <h1 class="hero-title-2 f-base ">HEALTH CENTER</h1>
+                    </div>
+                </div> 
+                
+                <div id="dm-ai" class="d-none" >
+                    <div id="project-image-container">
+                        <img src="/img/projects/DM AI.png" alt="Dave Mark Health Center Project" class="img-fluid portrait">
+                    </div>
+                    <div id="project-des">
+                        <a class="btn btn-primary btn-md btn-lg btn-black modal-trigger" data-target="#dm-ai-modal">VIEW MORE</a>
+                    <h1 class="hero-title-2 f-base ">DM AI</h1>
+                    </div>
+                </div>  
+                <div id="student-id" class="d-none"> 
+                    <div id="project-image-container">
+                        <img src="/img/projects/STUDENT_ID_CASHCARD.png" alt="Dave Mark Health Center Project" class="img-fluid">
+                    </div>
+                    <div id="project-des">
+                        <a class="btn btn-primary btn-md btn-lg btn-black modal-trigger" data-target="#studen-id-modal">VIEW MORE</a>
+                    <h1 class="hero-title-2 f-base ">STUDEND ID CASH CARD</h1>
+                    </div>
+                </div>
+                <div id="maqlit" class="d-none">
+                    <div id="project-image-container">
+                        <img src="/img/projects/maqlit.png" alt="Dave Mark Health Center Project" class="img-fluid">
+                    </div>
+                    <div id="project-des">
+                        <a class="btn btn-primary btn-md btn-lg btn-black modal-trigger" data-target="#maqlit-modal">VIEW MORE</a>
+                    <h1 class="hero-title-2 f-base ">MAQLIT</h1>
+                    </div>
+                </div>
+                <div id="day1" class="d-none">
+                    <div id="project-image-container">
+                        <img src="/img/projects/maqlit.png" alt="Dave Mark Health Center Project" class="img-fluid">
+                    </div>
+                    <div id="project-des">
+                        <a class="btn btn-primary btn-md btn-lg btn-black modal-trigger" data-target="#day1-modal">VIEW MORE</a>
+                    <h1 class="hero-title-2 f-base ">DAY 1</h1>
+                    </div>
+                </div>
+
+                <div class="lead-works">
+                    <h1 class="hero-title-2 gotham"><b>WORKS</b></h1>
+                </div>
+                <!-- CUSTOM MODALS -->
+                <div class="modal-gsap"  id="heath-center-modal">
+                    <div class="modal-gsap-head">
+                        <span class="close-gmodal" data-close="#heath-center-modal">&times;</span>
+                    </div>
+                    <div class="modal-gsap-content ">
+
+                        <div class="modal-img-hero">
+                            <img src="/img/projects/healthcenter.png" class="img-fluid">
+                        </div>
+                        <div class="container-fluid pad0 m-0 ">
+                            <div class="row ">
+                                <div class="col-md-8 p-0">
+                                    <div class="content-area-modal">
+
+                                        <h1 class="hero-title-3">HEALTH CENTER</h1>
+                                        <div class="tal mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quo recusandae facere quis eaque repellat, quam non quibusdam ratione temporibus voluptatum harum incidunt fuga nostrum, maiores ipsa sed! Quod, id!
+                                        Totam perferendis itaque nulla est, porro placeat molestias? Repellendus, illo? Consequuntur quasi iure deserunt voluptatem excepturi consectetur, atque veniam modi! Repudiandae placeat assumenda obcaecati pariatur exercitationem est nostrum, quibusdam laboriosam?
+                                        Saepe ut quas sed eos quia! Repellat aperiam vero dolorum voluptas ab deleniti reprehenderit consectetur nam veritatis ipsum? Iste aspernatur officiis accusantium soluta dignissimos quisquam ea nam temporibus, aut nihil?
+                                        Incidunt sed perferendis voluptates. Fuga assumenda alias vitae. Eos, deserunt, deleniti et accusamus nisi iste sapiente harum id esse molestiae sint obcaecati sit quos minima porro hic facilis explicabo alias!
+                                        <BR>
+                                        Enim aperiam dolorum ullam officiis consectetur repudiandae facilis, sequi asperiores ipsam laborum dicta placeat natus minima praesentium cupiditate totam quasi veniam, animi maxime. Facilis quidem ad quaerat saepe nisi sint.
+                                        Mollitia quasi, explicabo reprehenderit consectetur sint saepe esse iusto aspernatur provident deleniti rerum doloremque officia aut sapiente delectus quidem ea, molestiae cumque magnam blanditiis animi quia nobis. Nostrum, odit dicta!
+                                        Similique quas numquam quod totam exercitationem ut alias. Ex soluta molestias fugit repellendus. Ratione odit natus blanditiis possimus recusandae iure necessitatibus hic iste temporibus dolor! Culpa ut odio voluptatum. Numquam!
+                                        Distinctio in magni magnam eaque delectus earum eveniet voluptatibus inventore, facilis illum ipsa asperiores. Beatae, dignissimos! Tempore iusto reprehenderit, animi porro molestias dicta facilis dolores, reiciendis sint obcaecati libero nihil.
+                                        Odio commodi architecto ratione cumque laborum impedit eveniet eum expedita, enim culpa quos consequatur doloremque pariatur soluta dicta iusto. Recusandae pariatur repellendus minus molestiae accusantium, odio non quia dicta magni!
+                                        Omnis, corrupti tenetur commodi beatae optio necessitatibus! Hic porro animi soluta. Libero, commodi fugiat. Quisquam iusto deserunt assumenda dicta voluptas, sit, quibusdam provident aliquid asperiores placeat id fugit distinctio earum!</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container relative">
-                <div class="stack-nav">
-                    <div class="stack-arrows">
-                        <div class="stact-arrow-right"><span class="ion-ios-arrow-round-back"></span></div>
-                        <div class="stact-arrow-left"><span class="ion-ios-arrow-round-forward"></span></div>
+                <div class="modal-gsap"  id="dm-ai-modal">
+                    <div class="modal-gsap-head">
+                        <span class="close-gmodal" data-close="#dm-ai-modal">&times;</span>
+                    </div>
+                    <div class="modal-gsap-content ">
+                        <div class="modal-img-hero">
+                            <img src="/img/projects/DM AI.png" class="img-fluid portrait">
                         </div>
-                    <div class="stact-list" id="stack-list">
-                            <i class="devicon-react-original colored active"></i>
-                            <i class="devicon-php-plain colored"></i>
-                            <i class="devicon-codeigniter-plain-wordmark"></i>
-                            <i class="devicon-css3-plain"></i>
-                            <i class="devicon-sass-original"></i>
-                            <i class="devicon-laravel-plain"></i>
-                            <i class="devicon-wordpress-plain"></i>
-                            <i class="devicon-bootstrap-plain"></i>
-                            <i class="devicon-photoshop-plain"></i>
-                            <i class="devicon-mysql-plain"></i>
-                            <i class="devicon-typescript-plain"></i>
-                            <i class="devicon-vuejs-plain"></i>
-                            <i class="devicon-javascript-plain"></i>
-                            <i class="devicon-github-plain"></i>
-                            <i class="devicon-html5-plain"></i>
-                            <i class="devicon-webpack-plain"></i>
+                        <div class="container-fluid pad0 m-0 ">
+                            <div class="row ">
+                                <div class="col-md-8 p-0">
+                                    <div class="content-area-modal">
+                                        <h1 class="hero-title-3">DM AI</h1>
+                                        <div class="tal mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quo recusandae facere quis eaque repellat, quam non quibusdam ratione temporibus voluptatum harum incidunt fuga nostrum, maiores ipsa sed! Quod, id!
+                                        Totam perferendis itaque nulla est, porro placeat molestias? Repellendus, illo? Consequuntur quasi iure deserunt voluptatem excepturi consectetur, atque veniam modi! Repudiandae placeat assumenda obcaecati pariatur exercitationem est nostrum, quibusdam laboriosam?
+                                        Saepe ut quas sed eos quia! Repellat aperiam vero dolorum voluptas ab deleniti reprehenderit consectetur nam veritatis ipsum? Iste aspernatur officiis accusantium soluta dignissimos quisquam ea nam temporibus, aut nihil?
+                                        Incidunt sed perferendis voluptates. Fuga assumenda alias vitae. Eos, deserunt, deleniti et accusamus nisi iste sapiente harum id esse molestiae sint obcaecati sit quos minima porro hic facilis explicabo alias!
+                                        <BR>
+                                        Enim aperiam dolorum ullam officiis consectetur repudiandae facilis, sequi asperiores ipsam laborum dicta placeat natus minima praesentium cupiditate totam quasi veniam, animi maxime. Facilis quidem ad quaerat saepe nisi sint.
+                                        Mollitia quasi, explicabo reprehenderit consectetur sint saepe esse iusto aspernatur provident deleniti rerum doloremque officia aut sapiente delectus quidem ea, molestiae cumque magnam blanditiis animi quia nobis. Nostrum, odit dicta!
+                                            Omnis, corrupti tenetur commodi beatae optio necessitatibus! Hic porro animi soluta. Libero, commodi fugiat. Quisquam iusto deserunt assumenda dicta voluptas, sit, quibusdam provident aliquid asperiores placeat id fugit distinctio earum!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-        </section> -->
+                <div class="modal-gsap"  id="maqlit-modal">
+                    <div class="modal-gsap-head">
+                        <span class="close-gmodal" data-close="#maqlit-modal">&times;</span>
+                    </div>
+                    <div class="modal-gsap-content ">
+                        <div class="modal-img-hero">
+                            <img src="/img/projects/healthcenter.png" class="img-fluid">
+                        </div>
+                        <div class="container-fluid pad0 m-0 ">
+                            <div class="row ">
+                                <div class="col-md-8 p-0">
+                                    <div class="content-area-modal">
 
-        <section class="section" id="about">
-            <div class="container pad0">
-                <div class="row">
+                                        <h1 class="hero-title-3">MAQLIT'S WEBSITE</h1>
+                                        <div class="tal mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quo recusandae facere quis eaque repellat, quam non quibusdam ratione temporibus voluptatum harum incidunt fuga nostrum, maiores ipsa sed! Quod, id!
+                                        Totam perferendis itaque nulla est, porro placeat molestias? Repellendus, illo? Consequuntur quasi iure deserunt voluptatem excepturi consectetur, atque veniam modi! Repudiandae placeat assumenda obcaecati pariatur exercitationem est nostrum, quibusdam laboriosam?
+                                        Saepe ut quas sed eos quia! Repellat aperiam vero dolorum voluptas ab deleniti reprehenderit consectetur nam veritatis ipsum? Iste aspernatur officiis accusantium soluta dignissimos quisquam ea nam temporibus, aut nihil?
+                                        Incidunt sed perferendis voluptates. Fuga assumenda alias vitae. Eos, deserunt, deleniti et accusamus nisi iste sapiente harum id esse molestiae sint obcaecati sit quos minima porro hic facilis explicabo alias!
+                                        <BR>
+                                        Enim aperiam dolorum ullam officiis consectetur repudiandae facilis, sequi asperiores ipsam laborum dicta placeat natus minima praesentium cupiditate totam quasi veniam, animi maxime. Facilis quidem ad quaerat saepe nisi sint.
+                                        Mollitia quasi, explicabo reprehenderit consectetur sint saepe esse iusto aspernatur provident deleniti rerum doloremque officia aut sapiente delectus quidem ea, molestiae cumque magnam blanditiis animi quia nobis. Nostrum, odit dicta!
+                                            Omnis, corrupti tenetur commodi beatae optio necessitatibus! Hic porro animi soluta. Libero, commodi fugiat. Quisquam iusto deserunt assumenda dicta voluptas, sit, quibusdam provident aliquid asperiores placeat id fugit distinctio earum!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-gsap"  id="day1-modal">
+                    <div class="modal-gsap-head">
+                        <span class="close-gmodal" data-close="#day1-modal">&times;</span>
+                    </div>
+                    <div class="modal-gsap-content ">
+                        <div class="modal-img-hero">
+                            <img src="/img/projects/healthcenter.png" class="img-fluid">
+                        </div>
+                        <div class="container-fluid pad0 m-0 ">
+                            <div class="row ">
+                                <div class="col-md-8 p-0">
+                                    <div class="content-area-modal">
+
+                                        <h1 class="hero-title-3">DAY 1</h1>
+                                        <div class="tal mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quo recusandae facere quis eaque repellat, quam non quibusdam ratione temporibus voluptatum harum incidunt fuga nostrum, maiores ipsa sed! Quod, id!
+                                        Totam perferendis itaque nulla est, porro placeat molestias? Repellendus, illo? Consequuntur quasi iure deserunt voluptatem excepturi consectetur, atque veniam modi! Repudiandae placeat assumenda obcaecati pariatur exercitationem est nostrum, quibusdam laboriosam?
+                                        Saepe ut quas sed eos quia! Repellat aperiam vero dolorum voluptas ab deleniti reprehenderit consectetur nam veritatis ipsum? Iste aspernatur officiis accusantium soluta dignissimos quisquam ea nam temporibus, aut nihil?
+                                        Incidunt sed perferendis voluptates. Fuga assumenda alias vitae. Eos, deserunt, deleniti et accusamus nisi iste sapiente harum id esse molestiae sint obcaecati sit quos minima porro hic facilis explicabo alias!
+                                        <BR>
+                                        Enim aperiam dolorum ullam officiis consectetur repudiandae facilis, sequi asperiores ipsam laborum dicta placeat natus minima praesentium cupiditate totam quasi veniam, animi maxime. Facilis quidem ad quaerat saepe nisi sint.
+                                        Mollitia quasi, explicabo reprehenderit consectetur sint saepe esse iusto aspernatur provident deleniti rerum doloremque officia aut sapiente delectus quidem ea, molestiae cumque magnam blanditiis animi quia nobis. Nostrum, odit dicta!
+                                            Omnis, corrupti tenetur commodi beatae optio necessitatibus! Hic porro animi soluta. Libero, commodi fugiat. Quisquam iusto deserunt assumenda dicta voluptas, sit, quibusdam provident aliquid asperiores placeat id fugit distinctio earum!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-gsap"  id="studen-id-modal">
+                    <div class="modal-gsap-head">
+                        <span class="close-gmodal" data-close="#studen-id-modal">&times;</span>
+                    </div>
+                    <div class="modal-gsap-content ">
+                        <div class="modal-img-hero">
+                            <img src="/img/projects/healthcenter.png" class="img-fluid">
+                        </div>
+                        <div class="container-fluid pad0 m-0 ">
+                            <div class="row ">
+                                <div class="col-md-8 p-0">
+                                    <div class="content-area-modal">
+
+                                        <h1 class="hero-title-3">STUDENT ID CASHCARD</h1>
+                                        <div class="tal mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quo recusandae facere quis eaque repellat, quam non quibusdam ratione temporibus voluptatum harum incidunt fuga nostrum, maiores ipsa sed! Quod, id!
+                                        Totam perferendis itaque nulla est, porro placeat molestias? Repellendus, illo? Consequuntur quasi iure deserunt voluptatem excepturi consectetur, atque veniam modi! Repudiandae placeat assumenda obcaecati pariatur exercitationem est nostrum, quibusdam laboriosam?
+                                        Saepe ut quas sed eos quia! Repellat aperiam vero dolorum voluptas ab deleniti reprehenderit consectetur nam veritatis ipsum? Iste aspernatur officiis accusantium soluta dignissimos quisquam ea nam temporibus, aut nihil?
+                                        Incidunt sed perferendis voluptates. Fuga assumenda alias vitae. Eos, deserunt, deleniti et accusamus nisi iste sapiente harum id esse molestiae sint obcaecati sit quos minima porro hic facilis explicabo alias!
+                                        <BR>
+                                        Enim aperiam dolorum ullam officiis consectetur repudiandae facilis, sequi asperiores ipsam laborum dicta placeat natus minima praesentium cupiditate totam quasi veniam, animi maxime. Facilis quidem ad quaerat saepe nisi sint.
+                                        Mollitia quasi, explicabo reprehenderit consectetur sint saepe esse iusto aspernatur provident deleniti rerum doloremque officia aut sapiente delectus quidem ea, molestiae cumque magnam blanditiis animi quia nobis. Nostrum, odit dicta!
+                                            Omnis, corrupti tenetur commodi beatae optio necessitatibus! Hic porro animi soluta. Libero, commodi fugiat. Quisquam iusto deserunt assumenda dicta voluptas, sit, quibusdam provident aliquid asperiores placeat id fugit distinctio earum!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END CUSTOM MODALS -->
+            </section>
+            <section class="section fifth" id="contact">
+                <div class="container-fluid  pad0 relative">
+                    <div class="bg-cover" style="background:url('img/contact-bg.jpg')"></div>
+                    <div class=" pl-10 pr-10 "> 
+                        <div class="row align-center vh-100">
+                            <div class="col-md-6 text-white">
+                                <div class="pad20">
+                                    <div class="lead-discription-line">
+                                        Contact <span class="line"></span>
+                                    </div>
+                                    <div class="how">
+                                        <h1 class="gotham hero-title-2 fw-600">HOW <br>TO START </h1>
+                                    </div>
+                                    <p class='gotham mw-80'>
+                                        Let me help your innovative teams
+                                        leverage technology, innovations
+                                        and drive your business into growth.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pad20">
+                                <form action="" class="pl-2 text-white">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group input-effect">
+                                                <input class="effect-16" type="text" name="first_name" placeholder="">
+                                                <label>First Name</label>
+                                                <span class="focus-border"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group input-effect">
+                                                <input class="effect-16" type="text" name="last_name" placeholder="">
+                                                <label>Last Name</label>
+                                                <span class="focus-border"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group input-effect">
+                                                <input class="effect-16" type="text" name="email" placeholder="">
+                                                <label>Email</label>
+                                                <span class="focus-border"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group input-effect">
+                                                <input class="effect-16" type="text" name="Business Name" placeholder="">
+                                                <label>Business Name</label>
+                                                <span class="focus-border"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group input-effect">
+                                                <textarea class="effect-16" placeholder="Message" ></textarea>
+                                                <span class="focus-border"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button class="btn btn-primary btn-md btn-lg btn-black pull-right">SEND</button>
+                                        </div>
+                                    </div>
+                                </form>    
+                            </div>
+                            
+                        </div>
+                    </div>
 
                 </div>
-            </div>
-        </section>
-
-  
-
+            </section>
+        </div>
+        <script>
+        $(".input-effect input").focusout(function(){
+			if($(this).val() != ""){
+				$(this).addClass("has-content");
+			}else{
+				$(this).removeClass("has-content");
+			}
+        })
+        </script>
     </body>
 </html>
