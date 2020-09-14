@@ -393,9 +393,6 @@ textarea{
   padding: 0;
   margin:0;
 }
-section#contact{
-overflow-y: scroll;
-}
 .bg-cover{
   width: inherit;
   height: inherit;
@@ -1044,8 +1041,16 @@ span.close-gmodal{
   }
 }
 @media (max-width: 768px) { 
+  section#contact{
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   #form-pad{
-    padding: 0 !important;
+    padding: 50px 20px !important;
   }
   .modal-img-hero{
     position: relative;
@@ -1210,6 +1215,7 @@ span.close-gmodal{
   }
   .navi-section.complete{
     left:1%;
+    top:1%;
     .nav-hamburger{
       top:10%;
     }
