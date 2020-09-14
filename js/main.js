@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
                     $(this).removeClass("has-content");
                 }
             })
-        }
+        },
         gsapModal: function(){
             $('.modal-gsap .close-gmodal').on('click', function(){
                 $this = $(this);
