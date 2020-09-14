@@ -45,7 +45,17 @@ jQuery(document).ready(function($) {
             this.projectsAnim()
             this.projectModal()
             this.gsapModal()
+            this.inputAnim()
         },
+        inputAnim: function(){
+            $(".input-effect input").focusout(function(){
+                if($(this).val() != ""){
+                    $(this).addClass("has-content");
+                }else{
+                    $(this).removeClass("has-content");
+                }
+            })
+        }
         gsapModal: function(){
             $('.modal-gsap .close-gmodal').on('click', function(){
                 $this = $(this);
@@ -96,6 +106,7 @@ jQuery(document).ready(function($) {
             })
         },
         nav: function(){
+
             $('.nav-item a').on('click', function(){
                 $('#nav-icon1').toggleClass('open');
                 $('.navi-section').toggleClass('open');
@@ -186,8 +197,8 @@ jQuery(document).ready(function($) {
             });
             
             tlProgject.from('.bg-black-project', {x:'100%', opacity: 0 ,duration: .9, });
-            tlProgject.from('#project-nav', {x:'100%', opacity: 0 , offset: '-=.6'});
-            tlProgject.from('#project-image-container', {y:50, opacity: 0 ,duration: .3});
+            tlProgject.from('#project-nav', {x:'100%', opacity: 0 },'-=.6');
+            tlProgject.from('#project-image-container', {y:50, opacity: 0 ,duration: .3},'-=.3');
             
             var els = $("#about p");
             els.each(function(i,e){
