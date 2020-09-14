@@ -1041,6 +1041,9 @@ span.close-gmodal{
   }
 }
 @media (max-width: 768px) { 
+  .hide-small{
+    display: none;
+  }
   section#contact{
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
