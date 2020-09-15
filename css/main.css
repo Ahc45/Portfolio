@@ -18,9 +18,8 @@ html {
           box-sizing: inherit;
 }
 
-a {
-  color: #C1C1C1 !important;
-  text-decoration: none;
+a.red {
+  color: #FF0000;
 }
 
 a:hover {
@@ -1251,6 +1250,7 @@ h1, h2, h3, h4, h5, h6, p {
   border: 0 !important;
   font-size: 15px !important;
   letter-spacing: 2px;
+  color: #C1C1C1 !important;
   padding: 12px 18px !important;
 }
 
@@ -1526,6 +1526,10 @@ h3#stacks-lead {
 
 .nav-container .contact-div p {
   margin: 0;
+}
+
+a {
+  color: #FF0000;
 }
 
 .navi-section {
@@ -2343,5 +2347,10 @@ span.close-gmodal {
   .navi-section.complete .logo {
     left: 75%;
   }
+}
+
+a {
+  color: #C1C1C1;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */

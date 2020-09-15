@@ -4,7 +4,7 @@
   $base-font-color: #C1C1C1;
 
   $dark-base: #070506;
-  $light-basr: #fff;
+  $light-base: #fff;
 
   $tbf-size-1: 50px;
   $tbf-size-2: 40px;
@@ -41,9 +41,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-a{
-  color: $base-font-color !important;
-  text-decoration: none;
+
+a.red{
+  color:#FF0000;
 }
 a:hover{
   filter: invert(10%);
@@ -335,6 +335,7 @@ body{
   border: 0 !important;
   font-size: 15px !important;
   letter-spacing: 2px;
+  color: $base-font-color !important;
   padding: 12px 18px !important;
 }
 .top10{ margin-top: 10px}
@@ -495,7 +496,9 @@ h3#stacks-lead {
     }
   }
 }
-
+a{
+  color:#FF0000;
+}
 // hamburger
 .navi-section{
 
@@ -1239,4 +1242,8 @@ span.close-gmodal{
   .navi-section.complete .logo {
     left: 75%;
   }
+}
+a{
+  color: $base-font-color;
+  text-decoration: none;
 }
