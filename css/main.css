@@ -1402,7 +1402,7 @@ textarea {
 
 #home, #contact {
   background: #101213;
-  z-index: -1;
+  z-index: 1;
 }
 
 .bg-cover {
