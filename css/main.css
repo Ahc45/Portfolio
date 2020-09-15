@@ -2353,4 +2353,8 @@ a {
   color: #C1C1C1;
   text-decoration: none;
 }
+
+.fb_dialog_advanced {
+  z-index: 99 !important;
+}
 /*# sourceMappingURL=main.css.map */

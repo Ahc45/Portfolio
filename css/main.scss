@@ -1247,3 +1247,7 @@ a{
   color: $base-font-color;
   text-decoration: none;
 }
+
+.fb_dialog_advanced{
+  z-index: 99 !important;
+}
