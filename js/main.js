@@ -46,6 +46,12 @@ jQuery(document).ready(function($) {
             this.projectModal()
             this.gsapModal()
             this.inputAnim()
+            this.animateLogo()
+        },
+        animateLogo: function(){
+            var animateL = gsap.timeline({ease:'Expo.easeOut',});
+            animateL
+            .from('#svg',{y:'-10%', autoAlpha:0, duration:2,repeat:-1})
         },
         inputAnim: function(){
             $(".input-effect input").focusout(function(){
