@@ -2230,7 +2230,7 @@ span.close-gmodal {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
   }
-  .navi-section.complete img.logo {
+  .navi-section.complete .logo {
     top: 7%;
     left: 80%;
     -webkit-transform: scale(0.8);
@@ -2340,7 +2340,7 @@ span.close-gmodal {
   .navi-section.complete .nav-hamburger {
     top: 10%;
   }
-  .navi-section.complete img.logo {
+  .navi-section.complete .logo {
     left: 75%;
   }
 }

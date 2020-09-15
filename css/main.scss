@@ -1119,7 +1119,8 @@ span.close-gmodal{
       top:15%;
       transform: scale(.8);
     }
-    img.logo{
+    
+    .logo{
       top: 7%;
       left: 80%;
       transform: scale(.8);
@@ -1235,7 +1236,7 @@ span.close-gmodal{
       top:10%;
     }
   }
-  .navi-section.complete img.logo {
+  .navi-section.complete .logo {
     left: 75%;
   }
 }
