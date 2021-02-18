@@ -4,7 +4,7 @@
   $base-font-color: #C1C1C1;
 
   $dark-base: #070506;
-  $light-basr: #fff;
+  $light-base: #fff;
 
   $tbf-size-1: 50px;
   $tbf-size-2: 40px;
@@ -18,10 +18,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
+// @font-face {
+//   font-family: 'Gotham';
+//   src: url('/css/fonts/gotham/Gotham-Book.woff2') format('woff2'),
+//       url('/css/fonts/gotham/Gotham-book.woff') format('woff');
+//   font-style: normal;
+// }
+
 @font-face {
-  font-family: 'Gotham';
-  src: url('./fonts/gotham/Gotham-book.woff2') format('woff2'),
-      url('./fonts/gotham/Gotham-book.woff') format('woff');
+  font-family: 'Gotham Book';
+  src: url('/fonts/gotham/Gotham-Book.woff2') format('woff2'),
+      url('/fonts/gotham/Gotham-Book.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 html {
@@ -33,9 +41,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-a{
-  color: $base-font-color !important;
-  text-decoration: none;
+
+a.red{
+  color:#FF0000;
 }
 a:hover{
   filter: invert(10%);
@@ -327,6 +335,7 @@ body{
   border: 0 !important;
   font-size: 15px !important;
   letter-spacing: 2px;
+  color: $base-font-color !important;
   padding: 12px 18px !important;
 }
 .top10{ margin-top: 10px}
@@ -392,6 +401,10 @@ textarea{
   position: relative;
   padding: 0;
   margin:0;
+}
+#home,#contact{
+  background:#101213;
+  z-index: 1;
 }
 .bg-cover{
   width: inherit;
@@ -483,7 +496,9 @@ h3#stacks-lead {
     }
   }
 }
-
+a{
+  color:#FF0000;
+}
 // hamburger
 .navi-section{
 
@@ -520,6 +535,10 @@ h3#stacks-lead {
     h1{
       mix-blend-mode: difference;
     }
+}
+
+#form-pad{
+  padding:10% 12%;
 }
 .navi-section.complete{
   width: 160px;
@@ -784,6 +803,7 @@ h3#stacks-lead {
 #project-nav{
   background-color: #070506;
   width:fit-content;
+  max-width: 30%;
   padding: 20px 30px 20px 20px;
   position: absolute;
   right: 0;
@@ -943,9 +963,7 @@ h3#stacks-lead {
   -webkit-transform: translateX(-110);
   transform: translateX(67vw) translateY(20vh);
 }
-// #contact{
-//   position: relative;
-// }
+
 // #home{
 //   position: relative;
 // }
@@ -1038,6 +1056,20 @@ span.close-gmodal{
   }
 }
 @media (max-width: 768px) { 
+  .hide-small{
+    display: none;
+  }
+  section#contact{
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  #form-pad{
+    padding: 50px 20px !important;
+  }
   .modal-img-hero{
     position: relative;
     max-width: 90%;
@@ -1084,11 +1116,14 @@ span.close-gmodal{
     width: 100%;
     height: 0;
     left:2%;
+    top:6%;
+    
     .nav-hamburger{
       top:15%;
       transform: scale(.8);
     }
-    img.logo{
+    
+    .logo{
       top: 7%;
       left: 80%;
       transform: scale(.8);
@@ -1141,7 +1176,7 @@ span.close-gmodal{
   }
   #project-image-container{
     min-width: 90%;
-    top: 35%;
+    top: 29%;
     left: 5%;
     .portrait{
       min-width: 30%;
@@ -1199,11 +1234,20 @@ span.close-gmodal{
   }
   .navi-section.complete{
     left:1%;
+    top:1%;
     .nav-hamburger{
       top:10%;
     }
   }
-  .navi-section.complete img.logo {
+  .navi-section.complete .logo {
     left: 75%;
   }
+}
+a{
+  color: $base-font-color;
+  text-decoration: none;
+}
+
+.fb_dialog_advanced{
+  z-index: 99 !important;
 }

@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 @font-face {
-  font-family: 'Gotham';
-  src: url("./fonts/gotham/Gotham-book.woff2") format("woff2"), url("./fonts/gotham/Gotham-book.woff") format("woff");
+  font-family: 'Gotham Book';
+  src: url("/fonts/gotham/Gotham-Book.woff2") format("woff2"), url("/fonts/gotham/Gotham-Book.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -17,9 +18,8 @@ html {
           box-sizing: inherit;
 }
 
-a {
-  color: #C1C1C1 !important;
-  text-decoration: none;
+a.red {
+  color: #FF0000;
 }
 
 a:hover {
@@ -1250,6 +1250,7 @@ h1, h2, h3, h4, h5, h6, p {
   border: 0 !important;
   font-size: 15px !important;
   letter-spacing: 2px;
+  color: #C1C1C1 !important;
   padding: 12px 18px !important;
 }
 
@@ -1399,6 +1400,11 @@ textarea {
   margin: 0;
 }
 
+#home, #contact {
+  background: #101213;
+  z-index: 1;
+}
+
 .bg-cover {
   width: inherit;
   height: inherit;
@@ -1522,6 +1528,10 @@ h3#stacks-lead {
   margin: 0;
 }
 
+a {
+  color: #FF0000;
+}
+
 .navi-section {
   position: fixed;
   height: 100vh;
@@ -1567,6 +1577,10 @@ h3#stacks-lead {
 
 .lead-works h1 {
   mix-blend-mode: difference;
+}
+
+#form-pad {
+  padding: 10% 12%;
 }
 
 .navi-section.complete {
@@ -1865,6 +1879,7 @@ h3#stacks-lead {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  max-width: 30%;
   padding: 20px 30px 20px 20px;
   position: absolute;
   right: 0;
@@ -2149,6 +2164,22 @@ span.close-gmodal {
 }
 
 @media (max-width: 768px) {
+  .hide-small {
+    display: none;
+  }
+  section#contact {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  section#contact::-webkit-scrollbar {
+    display: none;
+  }
+  #form-pad {
+    padding: 50px 20px !important;
+  }
   .modal-img-hero {
     position: relative;
     max-width: 90%;
@@ -2196,13 +2227,14 @@ span.close-gmodal {
     width: 100%;
     height: 0;
     left: 2%;
+    top: 6%;
   }
   .navi-section.complete .nav-hamburger {
     top: 15%;
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
   }
-  .navi-section.complete img.logo {
+  .navi-section.complete .logo {
     top: 7%;
     left: 80%;
     -webkit-transform: scale(0.8);
@@ -2255,7 +2287,7 @@ span.close-gmodal {
   }
   #project-image-container {
     min-width: 90%;
-    top: 35%;
+    top: 29%;
     left: 5%;
   }
   #project-image-container .portrait {
@@ -2307,12 +2339,22 @@ span.close-gmodal {
   }
   .navi-section.complete {
     left: 1%;
+    top: 1%;
   }
   .navi-section.complete .nav-hamburger {
     top: 10%;
   }
-  .navi-section.complete img.logo {
+  .navi-section.complete .logo {
     left: 75%;
   }
+}
+
+a {
+  color: #C1C1C1;
+  text-decoration: none;
+}
+
+.fb_dialog_advanced {
+  z-index: 99 !important;
 }
 /*# sourceMappingURL=main.css.map */
